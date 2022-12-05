@@ -1,6 +1,5 @@
 import pygame
-from obj import Obj
-from obj import Button
+from obj import Obj, Button
 
 pygame.init()
 
@@ -9,9 +8,6 @@ class Main:
 
     def __init__(self, x, y, titulo, icone, musica):
 
-        self.rect = None
-        self.MousePos = None
-        self.mouse = None
         self.tela = pygame.display.set_mode([x, y])
         pygame.display.set_caption(titulo)
         pygame.display.set_icon(pygame.image.load(icone))
