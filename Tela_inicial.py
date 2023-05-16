@@ -89,7 +89,7 @@ class Main:
                     if not (200 <= mouse_pos[0] <= 620 and 130 <= mouse_pos[1] <= 450):
                         continue  # Ignora o evento se o clique não estiver dentro da placa
                     if 580 <= mouse_pos[0] <= 620 and 130 <= mouse_pos[1] <= 170:
-                        self.display_placa = False
+                        self.toggle_placa()
 
                 for button in self.button_grups:
                     if button.rect.collidepoint(event.pos):
