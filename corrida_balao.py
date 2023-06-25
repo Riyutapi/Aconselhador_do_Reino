@@ -1822,17 +1822,7 @@ def corrida_balao(tela: pygame.Surface):
                                     fogo_som.set_volume(volume)
                                     chegada_som.set_volume(volume)
 
-        # Movimentação do player respeitando os limites
-        teclas_pressionadas = pygame.key.get_pressed()
-        if teclas_pressionadas[pygame.K_UP] and player_balao_y > 0:
-            player_balao_y -= movimento
-        if teclas_pressionadas[pygame.K_DOWN] and player_balao_y < 350:
-            player_balao_y += movimento
-
-        # Movimentação do Jopo
-        jopo_balao_y = movimento_jopo_balao_y(jopo_balao_x, jopo_balao_y, list_hitbox)
-
-        # Movimentação do fundo
+        # Desenhar os céus
         tela.blit(ceu, (ceu_x1, 0))
         tela.blit(ceu_2, (ceu_x2, 0))
 
@@ -2063,6 +2053,16 @@ def corrida_balao(tela: pygame.Surface):
             if tempo_atual2 - ultimo_tempo_player > tempo_espera_vento:
                 espera_vento2 = False
         
+        # Movimentação do player respeitando os limites
+        teclas_pressionadas = pygame.key.get_pressed()
+        if teclas_pressionadas[pygame.K_UP] and player_balao_y > 0:
+            player_balao_y -= movimento
+        if teclas_pressionadas[pygame.K_DOWN] and player_balao_y < 350:
+            player_balao_y += movimento
+
+        # Movimentação do Jopo
+        jopo_balao_y = movimento_jopo_balao_y(jopo_balao_x, jopo_balao_y, list_hitbox)
+
         # Movimentação dos obstáculos
         # Árvores
         if not tempo_final:
