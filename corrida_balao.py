@@ -1714,8 +1714,8 @@ def corrida_balao(tela: pygame.Surface):
     # Laço principal
     while True:
         # Controlador de tempo da primeira parte (o pygame tem o time.get_ticks e o time.set_timer, mas o primeiro é complicado de controlar
-        # e o segundo faria o código ficar gigante. Eu precisaria estudar a biblioteca time, para ver se ela resolviria esse problema, pois
-        # esse tipo de controlador sofre influência do tamanho do código.
+        # e o segundo faria o código ficar gigante. Eu precisaria estudar a biblioteca time, para ver se ela resolveria esse problema, pois
+        # esse tipo de controlador sofre influência do tamanho do código).
         if tempo_inicio < 3000:
             tempo_inicio +=1
 
